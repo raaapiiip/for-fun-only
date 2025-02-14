@@ -71,6 +71,20 @@ const animationTimeline = () => {
       },
       "+=2"
     )
+    .from(".three-2", 0.7, {
+      opacity: 0,
+      y: 10,
+      // scale: 0.7
+    })
+    .to(
+      ".three-2",
+      0.7,
+      {
+        opacity: 0,
+        y: 10,
+      },
+      "+=2"
+    )
     .from(".four", 0.7, {
       scale: 0.2,
       opacity: 0,
@@ -182,7 +196,7 @@ const animationTimeline = () => {
       0.2
     )
     .from(
-      ".girl-dp",
+      ".cat-flower",
       0.5,
       {
         scale: 3.5,
