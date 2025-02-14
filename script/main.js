@@ -253,7 +253,7 @@ const animationTimeline = () => {
       "party"
     )
     .staggerTo(
-      ".eight svg",
+      ".seven",
       1.5,
       {
         visibility: "visible",
