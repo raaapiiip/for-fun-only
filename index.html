@@ -12,6 +12,27 @@
 </head>
 
 <body>
+  <button id="play-button">Click this if you don't hear the sound!</button>
+  <audio src="sound/song.mp3" id="background-audio" autoplay loop muted></audio>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const audio = document.getElementById("background-audio");
+
+      // Coba autoplay langsung
+      setTimeout(() => {
+        audio.muted = false;
+        audio.play().catch(error => console.log("Autoplay diblokir:", error));
+      }, 200);
+
+      // Jika autoplay gagal, jalankan setelah user klik halaman
+      document.addEventListener("click", () => {
+        audio.muted = false;
+        audio.play().catch(error => console.log("Autoplay masih diblokir:", error));
+      }, { once: true }); // Hanya dijalankan sekali
+    });
+  </script>
+
   <div class="container">
     <div class="one">
       <h1 class="one">
@@ -98,7 +119,7 @@
     </div>
     <div class="nine">
       <p>Okay, now come back and tell me if you liked it.</p>
-      <p id="replay">Or click this page if you want to watch it again.</p>
+      <p id="replay">Or click "me" 👈 if you want to watch it again.</p>
       <p class="last-smile">:)</p>
     </div>
   </div>
